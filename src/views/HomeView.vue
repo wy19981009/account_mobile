@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+
+  <nav class="nav">
+    <text>极简记账</text>
+  </nav>
+
+  <body>
+
+  </body>
+  <footer class="footer">
+    <van-tabbar v-model="active" @change="onChange">
+      <van-tabbar-item icon="home-o">标签 1</van-tabbar-item>
+      <van-tabbar-item icon="search">标签 2</van-tabbar-item>
+      <van-tabbar-item icon="friends-o">标签 3</van-tabbar-item>
+      <van-tabbar-item icon="setting-o">标签 4</van-tabbar-item>
+    </van-tabbar>
+  </footer>
+
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script setup>
+import { ref } from 'vue';
+import { showToast } from 'vant';
+const active = ref(0);
+const onChange = (index) => showToast(`标签 ${index}`);
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
 </script>
+
+<style lang="scss">
+
+</style>
