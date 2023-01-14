@@ -1,8 +1,6 @@
 <template>
 
-  <van-nav-bar title="极简记账" />
-
-
+  <van-nav-bar title="账单" />
 
 </template>
 

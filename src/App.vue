@@ -3,6 +3,22 @@
 
 </template>
 
+<script setup>
+import { onMounted } from 'vue';
+import { getToken } from './utils'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+onMounted(() => {
+  if (!getToken()) {
+    router.push('/login')
+  } else if (router.options.history.base === '/#') {
+    router.push('/home')
+  }
+})
+
+
+</script>
+
 <style lang="scss">
 html {
   -ms-text-size-adjust: 100%;
