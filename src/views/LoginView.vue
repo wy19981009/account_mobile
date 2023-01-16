@@ -1,9 +1,5 @@
 <template>
-  <nav class="nav">
-    <div class="back" @click="back"><van-icon name="arrow-left" />返回</div>
-    <div class="title">登录</div>
-    <div class="more"><van-icon name="ellipsis" /></div>
-  </nav>
+  <van-nav-bar title="登录" left-text="返回" left-arrow @click-left="onClickLeft" />
 
   <main class="main">
 
@@ -35,12 +31,10 @@ import { useStore } from 'vuex';
 const username = ref('');
 const password = ref('');
 const router = useRouter()
-const back = () => {
-  router.back()
-}
+const onClickLeft = () => history.back();
 const store = useStore()
 onMounted(() => {
-  console.log(store.state.username, store.state.password);
+  // console.log(store.state.username, store.state.password);
   username.value = store.state.username
   password.value = store.state.password
   // console.log(username, password);
@@ -77,28 +71,6 @@ const toRegister = () => {
 </script>
 
 <style lang="scss">
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 15px 0 15px;
-  height: 2.5rem;
-  background-color: #fff;
-  margin-bottom: 1.226rem;
-
-  .back {
-    margin-top: .58rem;
-  }
-
-  .title {
-    margin-right: 1.5rem;
-    margin-top: .58rem;
-  }
-
-  .more {
-    margin-top: .58rem;
-  }
-}
-
 .main {
   padding: 0.8rem;
   text-align: center;

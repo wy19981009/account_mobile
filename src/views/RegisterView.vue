@@ -1,9 +1,5 @@
 <template>
-  <nav class="nav">
-    <div class="back" @click="back"><van-icon name="arrow-left" />返回</div>
-    <div class="title">注册</div>
-    <div class="more"><van-icon name="ellipsis" /></div>
-  </nav>
+  <van-nav-bar title="注册" left-text="返回" left-arrow @click-left="onClickLeft" />
 
   <main class="main">
 
@@ -41,9 +37,7 @@ const password = ref('');
 const rePassword = ref('');
 const router = useRouter();
 const store = useStore()
-const back = () => {
-  router.back()
-}
+const onClickLeft = () => history.back();
 
 onMounted(() => {
   console.log(store.state.username, store.state.password);
@@ -92,28 +86,6 @@ const toLogin = () => {
 </script>
 
 <style lang="scss">
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 15px 0 15px;
-  height: 2.5rem;
-  background-color: #fff;
-  margin-bottom: 1.226rem;
-
-  .back {
-    margin-top: .58rem;
-  }
-
-  .title {
-    margin-right: 1.5rem;
-    margin-top: .58rem;
-  }
-
-  .more {
-    margin-top: .58rem;
-  }
-}
-
 .main {
   padding: 0.8rem;
   text-align: center;

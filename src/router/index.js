@@ -11,6 +11,9 @@ import HouseLoanView from "../views/HouseLoanView.vue";
 import GiftView from "../views/GiftView.vue";
 import SettingView from "../views/SettingView.vue";
 import WishView from "../views/WishView.vue";
+import UpdatePerInfoView from "../views/UpdatePerInfoView.vue";
+import UpdateAvatarView from "../views/UpdateAvatarView.vue";
+import UpdatePasswordView from "../views/UpdatePasswordView.vue";
 const routes = [
 	{
 		path: "/main",
@@ -72,6 +75,21 @@ const routes = [
 		path: "/wish",
 		name: "wish",
 		component: WishView,
+	},
+	{
+		path: "/updateperinfo",
+		name: "updateperinfo",
+		component: UpdatePerInfoView,
+	},
+	{
+		path: "/updateavatar",
+		name: "updateavatar",
+		component: UpdateAvatarView,
+	},
+	{
+		path: "/updatepassword",
+		name: "updatepassword",
+		component: UpdatePasswordView,
 	},
 	{
 		path: "/",

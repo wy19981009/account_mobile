@@ -5,7 +5,7 @@ const BASE_URL = "http://127.0.0.1:8088";
 
 const API = axios.create({
 	baseURL: BASE_URL,
-	headers: { "Content-Type": "application/x-www-form-urlencoded" },
+	// headers: { "Content-Type": "application/x-www-form-urlencoded" },
 });
 
 // 添加请求拦截器

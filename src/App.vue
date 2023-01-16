@@ -1,6 +1,7 @@
 <template>
-  <router-view></router-view>
-
+  <van-config-provider :theme="this.$store.state.theme">
+    <router-view></router-view>
+  </van-config-provider>
 </template>
 
 <script setup>
